@@ -1,0 +1,68 @@
+body {
+  background: #fafafa;
+  color: #202020;
+}
+
+.hero {
+  background: linear-gradient(135deg, #e44332, #ff6b5f);
+  color: white;
+  border-radius: 24px;
+  padding: 40px;
+}
+
+.glass-card,
+.task-card {
+  border: 1px solid #eeeeee;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.task-card {
+  transition: 0.25s;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(228,67,50,0.15);
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff1ef;
+  color: #e44332;
+  font-size: 22px;
+}
+
+.btn-primary,
+.nav-pills .nav-link.active,
+.progress-bar {
+  background-color: #e44332 !important;
+  border-color: #e44332 !important;
+}
+
+.btn-outline-primary {
+  color: #e44332 !important;
+  border-color: #e44332 !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #e44332 !important;
+  color: white !important;
+}
+
+.text-primary {
+  color: #e44332 !important;
+}
+
+.empty-state {
+  border: 2px dashed #f0b3ad;
+  border-radius: 20px;
+  padding: 40px;
+  color: #777;
+  background: white;
+}
