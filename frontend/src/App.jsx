@@ -49,7 +49,7 @@ const addTask = () => {
   };
 
   if (editingTask) {
-   fetch(`${API_URL}/tasks/${...}`, {
+   fetch(`${API_URL}/tasks/${editingTask.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -99,13 +99,13 @@ const addTask = () => {
     .catch((error) => console.log(error));
 };
   const deleteTask = (id) => {
-    fetch(`${API_URL}/tasks/${...}`, { method: "DELETE" }).then(() => {
+    fetch(`${API_URL}/tasks/${id}`, { method: "DELETE" }).then(() => {
       setTasks(tasks.filter((task) => task.id !== id));
     });
   };
 
   const toggleComplete = (task) => {
-    fetch(`${API_URL}/tasks/${...}`, {
+   fetch(`${API_URL}/tasks/${task.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
