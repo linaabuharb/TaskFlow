@@ -6,7 +6,7 @@ import StatsCards from "./components/StatsCards";
 import TaskCard from "./components/TaskCard";
 import TaskForm from "./components/TaskForm";
 import AuthForm from "./components/AuthForm";
-
+const API_URL = "https://taskflow-2k63.onrender.com";
 function App() {
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState("");
@@ -29,7 +29,7 @@ function App() {
   });
 
   useEffect(() => {
-    fetch("/tasks")
+    fetch(`${API_URL}/tasks`)
       .then((res) => res.json())
       .then((data) => setTasks(data))
       .catch((err) => console.log(err));
@@ -49,7 +49,7 @@ const addTask = () => {
   };
 
   if (editingTask) {
-    fetch(`/tasks/${editingTask.id}`, {
+   fetch(`${API_URL}/tasks/${...}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +79,7 @@ const addTask = () => {
     return;
   }
 
-  fetch("/tasks", {
+  fetch(`${API_URL}/tasks`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -99,13 +99,13 @@ const addTask = () => {
     .catch((error) => console.log(error));
 };
   const deleteTask = (id) => {
-    fetch(`/tasks/${id}`, { method: "DELETE" }).then(() => {
+    fetch(`${API_URL}/tasks/${...}`, { method: "DELETE" }).then(() => {
       setTasks(tasks.filter((task) => task.id !== id));
     });
   };
 
   const toggleComplete = (task) => {
-    fetch(`/tasks/${task.id}`, {
+    fetch(`${API_URL}/tasks/${...}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
