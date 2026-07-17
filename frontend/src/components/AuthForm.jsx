@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+const API_URL = "https://taskflow-2k63.onrender.com";
 function AuthForm({ onAuthSuccess }) {
   const [mode, setMode] = useState("login");
   const [name, setName] = useState("");
@@ -31,7 +31,7 @@ function AuthForm({ onAuthSuccess }) {
           };
 
     try {
-      const response = await fetch(endpoint, {
+      const response = await fetch(`${API_URL}${endpoint}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
